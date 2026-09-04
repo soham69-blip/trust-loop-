@@ -75,7 +75,7 @@ function AuditLogPage() {
               <Btn
                 icon="download"
                 onClick={() => {
-                  downloadCSV("trustloop-audit-log", rows);
+                  downloadCSV("trustloop-audit-log", rows.map((r) => ({ ...r })));
                   toast.success(`${rows.length} entries exported`);
                 }}
               >

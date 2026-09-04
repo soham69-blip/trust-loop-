@@ -72,7 +72,7 @@ function ControlledLearningPage() {
             <Btn
               icon="download"
               onClick={() => {
-                downloadCSV("trustloop-ground-truth", rows);
+                downloadCSV("trustloop-ground-truth", rows.map((r) => ({ ...r })));
                 toast.success("Ground-truth set exported");
               }}
             >

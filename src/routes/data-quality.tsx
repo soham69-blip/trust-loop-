@@ -99,7 +99,7 @@ function DataQualityPage() {
               <Btn
                 icon="download"
                 onClick={() => {
-                  downloadCSV("trustloop-data-quality", rows);
+                  downloadCSV("trustloop-data-quality", rows.map((r) => ({ ...r })));
                   toast.success("Quality report exported");
                 }}
               >
