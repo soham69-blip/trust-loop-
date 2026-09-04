@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AnalyzeReturnRouteImport } from './routes/analyze-return'
+import { Route as AssignedRouteImport } from './routes/assigned'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as FraudRadarRouteImport } from './routes/fraud-radar'
+import { Route as ReturnsRouteImport } from './routes/returns'
+import { Route as ReviewQueueRouteImport } from './routes/review-queue'
+import { Route as CaseCaseIdRouteImport } from './routes/case.$caseId'
+import { Route as GovernanceRetrainingRouteImport } from './routes/governance.retraining'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyzeReturnRoute = AnalyzeReturnRouteImport.update({
+  id: '/analyze-return',
+  path: '/analyze-return',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssignedRoute = AssignedRouteImport.update({
+  id: '/assigned',
+  path: '/assigned',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FraudRadarRoute = FraudRadarRouteImport.update({
+  id: '/fraud-radar',
+  path: '/fraud-radar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReturnsRoute = ReturnsRouteImport.update({
+  id: '/returns',
+  path: '/returns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewQueueRoute = ReviewQueueRouteImport.update({
+  id: '/review-queue',
+  path: '/review-queue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseCaseIdRoute = CaseCaseIdRouteImport.update({
+  id: '/case/$caseId',
+  path: '/case/$caseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovernanceRetrainingRoute = GovernanceRetrainingRouteImport.update({
+  id: '/governance/retraining',
+  path: '/governance/retraining',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/analyze-return': typeof AnalyzeReturnRoute
+  '/assigned': typeof AssignedRoute
+  '/dashboard': typeof DashboardRoute
+  '/fraud-radar': typeof FraudRadarRoute
+  '/returns': typeof ReturnsRoute
+  '/review-queue': typeof ReviewQueueRoute
+  '/case/$caseId': typeof CaseCaseIdRoute
+  '/governance/retraining': typeof GovernanceRetrainingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/analyze-return': typeof AnalyzeReturnRoute
+  '/assigned': typeof AssignedRoute
+  '/dashboard': typeof DashboardRoute
+  '/fraud-radar': typeof FraudRadarRoute
+  '/returns': typeof ReturnsRoute
+  '/review-queue': typeof ReviewQueueRoute
+  '/case/$caseId': typeof CaseCaseIdRoute
+  '/governance/retraining': typeof GovernanceRetrainingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/analyze-return': typeof AnalyzeReturnRoute
+  '/assigned': typeof AssignedRoute
+  '/dashboard': typeof DashboardRoute
+  '/fraud-radar': typeof FraudRadarRoute
+  '/returns': typeof ReturnsRoute
+  '/review-queue': typeof ReviewQueueRoute
+  '/case/$caseId': typeof CaseCaseIdRoute
+  '/governance/retraining': typeof GovernanceRetrainingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/analyze-return'
+    | '/assigned'
+    | '/dashboard'
+    | '/fraud-radar'
+    | '/returns'
+    | '/review-queue'
+    | '/case/$caseId'
+    | '/governance/retraining'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/analyze-return'
+    | '/assigned'
+    | '/dashboard'
+    | '/fraud-radar'
+    | '/returns'
+    | '/review-queue'
+    | '/case/$caseId'
+    | '/governance/retraining'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/analyze-return'
+    | '/assigned'
+    | '/dashboard'
+    | '/fraud-radar'
+    | '/returns'
+    | '/review-queue'
+    | '/case/$caseId'
+    | '/governance/retraining'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  AnalyzeReturnRoute: typeof AnalyzeReturnRoute
+  AssignedRoute: typeof AssignedRoute
+  DashboardRoute: typeof DashboardRoute
+  FraudRadarRoute: typeof FraudRadarRoute
+  ReturnsRoute: typeof ReturnsRoute
+  ReviewQueueRoute: typeof ReviewQueueRoute
+  CaseCaseIdRoute: typeof CaseCaseIdRoute
+  GovernanceRetrainingRoute: typeof GovernanceRetrainingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyze-return': {
+      id: '/analyze-return'
+      path: '/analyze-return'
+      fullPath: '/analyze-return'
+      preLoaderRoute: typeof AnalyzeReturnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assigned': {
+      id: '/assigned'
+      path: '/assigned'
+      fullPath: '/assigned'
+      preLoaderRoute: typeof AssignedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fraud-radar': {
+      id: '/fraud-radar'
+      path: '/fraud-radar'
+      fullPath: '/fraud-radar'
+      preLoaderRoute: typeof FraudRadarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/returns': {
+      id: '/returns'
+      path: '/returns'
+      fullPath: '/returns'
+      preLoaderRoute: typeof ReturnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review-queue': {
+      id: '/review-queue'
+      path: '/review-queue'
+      fullPath: '/review-queue'
+      preLoaderRoute: typeof ReviewQueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case/$caseId': {
+      id: '/case/$caseId'
+      path: '/case/$caseId'
+      fullPath: '/case/$caseId'
+      preLoaderRoute: typeof CaseCaseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/governance/retraining': {
+      id: '/governance/retraining'
+      path: '/governance/retraining'
+      fullPath: '/governance/retraining'
+      preLoaderRoute: typeof GovernanceRetrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  AnalyzeReturnRoute: AnalyzeReturnRoute,
+  AssignedRoute: AssignedRoute,
+  DashboardRoute: DashboardRoute,
+  FraudRadarRoute: FraudRadarRoute,
+  ReturnsRoute: ReturnsRoute,
+  ReviewQueueRoute: ReviewQueueRoute,
+  CaseCaseIdRoute: CaseCaseIdRoute,
+  GovernanceRetrainingRoute: GovernanceRetrainingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
