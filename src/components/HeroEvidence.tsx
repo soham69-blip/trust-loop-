@@ -40,7 +40,7 @@ export function HeroEvidence() {
         title: "Human Investigation",
         desc: `Item value (${money(c.value)}) exceeds the ₹42,000 auto-clear threshold for this category despite high visual signal agreement.`,
         gate: "MANDATE",
-        route: `${c.assignee ?? "Ananya Sharma"} (Lead Reviewer)`,
+        route: `${c.reviewer ?? "Ananya Sharma"} (Lead Reviewer)`,
       };
 
   return (
@@ -158,7 +158,7 @@ export function HeroEvidence() {
                 title="Return Policy Engine"
                 badge="Sec 4.2 Compliant"
                 badgeClass="bg-white/10 text-primary-fixed"
-                detail={`Eligibility window: Day ${c.policyDay ?? 14} of 30 • Valid proof`}
+                detail={`Eligibility window: Day ${c.daysSinceDelivery} of 30 • Valid proof`}
               />
               <StreamNode
                 icon="photo_camera"

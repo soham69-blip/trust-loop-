@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { AppShell } from "@/components/AppShell";
+import { HeroEvidence } from "@/components/HeroEvidence";
 import { Bar, Btn, EmptyState, PageHead, Panel, Pill, Stat, inputClass } from "@/components/tl";
 import { downloadCSV } from "@/lib/export";
 import { DECISION_LABEL, RISK_CLASS_LABEL } from "@/lib/demo-data";
@@ -89,6 +90,9 @@ function DashboardPage() {
   return (
     <AppShell>
       <main className="flex-1">
+        <div className="px-grid-margin pt-space-lg">
+          <HeroEvidence />
+        </div>
         <PageHead
           eyebrow="Overview // Realtime Engine"
           title="TrustLoop Overview"
