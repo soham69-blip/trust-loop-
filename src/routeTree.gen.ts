@@ -13,10 +13,15 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AnalyzeReturnRouteImport } from './routes/analyze-return'
 import { Route as AssignedRouteImport } from './routes/assigned'
+import { Route as AuditLogRouteImport } from './routes/audit-log'
+import { Route as ControlledLearningRouteImport } from './routes/controlled-learning'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DataQualityRouteImport } from './routes/data-quality'
 import { Route as FraudRadarRouteImport } from './routes/fraud-radar'
+import { Route as ModelRegistryRouteImport } from './routes/model-registry'
 import { Route as ReturnsRouteImport } from './routes/returns'
 import { Route as ReviewQueueRouteImport } from './routes/review-queue'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as CaseCaseIdRouteImport } from './routes/case.$caseId'
 import { Route as GovernanceRetrainingRouteImport } from './routes/governance.retraining'
 
@@ -40,14 +45,34 @@ const AssignedRoute = AssignedRouteImport.update({
   path: '/assigned',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuditLogRoute = AuditLogRouteImport.update({
+  id: '/audit-log',
+  path: '/audit-log',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ControlledLearningRoute = ControlledLearningRouteImport.update({
+  id: '/controlled-learning',
+  path: '/controlled-learning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DataQualityRoute = DataQualityRouteImport.update({
+  id: '/data-quality',
+  path: '/data-quality',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FraudRadarRoute = FraudRadarRouteImport.update({
   id: '/fraud-radar',
   path: '/fraud-radar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelRegistryRoute = ModelRegistryRouteImport.update({
+  id: '/model-registry',
+  path: '/model-registry',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReturnsRoute = ReturnsRouteImport.update({
@@ -58,6 +83,11 @@ const ReturnsRoute = ReturnsRouteImport.update({
 const ReviewQueueRoute = ReviewQueueRouteImport.update({
   id: '/review-queue',
   path: '/review-queue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseCaseIdRoute = CaseCaseIdRouteImport.update({
@@ -76,10 +106,15 @@ export interface FileRoutesByFullPath {
   '/analytics': typeof AnalyticsRoute
   '/analyze-return': typeof AnalyzeReturnRoute
   '/assigned': typeof AssignedRoute
+  '/audit-log': typeof AuditLogRoute
+  '/controlled-learning': typeof ControlledLearningRoute
   '/dashboard': typeof DashboardRoute
+  '/data-quality': typeof DataQualityRoute
   '/fraud-radar': typeof FraudRadarRoute
+  '/model-registry': typeof ModelRegistryRoute
   '/returns': typeof ReturnsRoute
   '/review-queue': typeof ReviewQueueRoute
+  '/settings': typeof SettingsRoute
   '/case/$caseId': typeof CaseCaseIdRoute
   '/governance/retraining': typeof GovernanceRetrainingRoute
 }
@@ -88,10 +123,15 @@ export interface FileRoutesByTo {
   '/analytics': typeof AnalyticsRoute
   '/analyze-return': typeof AnalyzeReturnRoute
   '/assigned': typeof AssignedRoute
+  '/audit-log': typeof AuditLogRoute
+  '/controlled-learning': typeof ControlledLearningRoute
   '/dashboard': typeof DashboardRoute
+  '/data-quality': typeof DataQualityRoute
   '/fraud-radar': typeof FraudRadarRoute
+  '/model-registry': typeof ModelRegistryRoute
   '/returns': typeof ReturnsRoute
   '/review-queue': typeof ReviewQueueRoute
+  '/settings': typeof SettingsRoute
   '/case/$caseId': typeof CaseCaseIdRoute
   '/governance/retraining': typeof GovernanceRetrainingRoute
 }
@@ -101,10 +141,15 @@ export interface FileRoutesById {
   '/analytics': typeof AnalyticsRoute
   '/analyze-return': typeof AnalyzeReturnRoute
   '/assigned': typeof AssignedRoute
+  '/audit-log': typeof AuditLogRoute
+  '/controlled-learning': typeof ControlledLearningRoute
   '/dashboard': typeof DashboardRoute
+  '/data-quality': typeof DataQualityRoute
   '/fraud-radar': typeof FraudRadarRoute
+  '/model-registry': typeof ModelRegistryRoute
   '/returns': typeof ReturnsRoute
   '/review-queue': typeof ReviewQueueRoute
+  '/settings': typeof SettingsRoute
   '/case/$caseId': typeof CaseCaseIdRoute
   '/governance/retraining': typeof GovernanceRetrainingRoute
 }
@@ -115,10 +160,15 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/analyze-return'
     | '/assigned'
+    | '/audit-log'
+    | '/controlled-learning'
     | '/dashboard'
+    | '/data-quality'
     | '/fraud-radar'
+    | '/model-registry'
     | '/returns'
     | '/review-queue'
+    | '/settings'
     | '/case/$caseId'
     | '/governance/retraining'
   fileRoutesByTo: FileRoutesByTo
@@ -127,10 +177,15 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/analyze-return'
     | '/assigned'
+    | '/audit-log'
+    | '/controlled-learning'
     | '/dashboard'
+    | '/data-quality'
     | '/fraud-radar'
+    | '/model-registry'
     | '/returns'
     | '/review-queue'
+    | '/settings'
     | '/case/$caseId'
     | '/governance/retraining'
   id:
@@ -139,10 +194,15 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/analyze-return'
     | '/assigned'
+    | '/audit-log'
+    | '/controlled-learning'
     | '/dashboard'
+    | '/data-quality'
     | '/fraud-radar'
+    | '/model-registry'
     | '/returns'
     | '/review-queue'
+    | '/settings'
     | '/case/$caseId'
     | '/governance/retraining'
   fileRoutesById: FileRoutesById
@@ -152,10 +212,15 @@ export interface RootRouteChildren {
   AnalyticsRoute: typeof AnalyticsRoute
   AnalyzeReturnRoute: typeof AnalyzeReturnRoute
   AssignedRoute: typeof AssignedRoute
+  AuditLogRoute: typeof AuditLogRoute
+  ControlledLearningRoute: typeof ControlledLearningRoute
   DashboardRoute: typeof DashboardRoute
+  DataQualityRoute: typeof DataQualityRoute
   FraudRadarRoute: typeof FraudRadarRoute
+  ModelRegistryRoute: typeof ModelRegistryRoute
   ReturnsRoute: typeof ReturnsRoute
   ReviewQueueRoute: typeof ReviewQueueRoute
+  SettingsRoute: typeof SettingsRoute
   CaseCaseIdRoute: typeof CaseCaseIdRoute
   GovernanceRetrainingRoute: typeof GovernanceRetrainingRoute
 }
@@ -190,6 +255,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AssignedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/audit-log': {
+      id: '/audit-log'
+      path: '/audit-log'
+      fullPath: '/audit-log'
+      preLoaderRoute: typeof AuditLogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/controlled-learning': {
+      id: '/controlled-learning'
+      path: '/controlled-learning'
+      fullPath: '/controlled-learning'
+      preLoaderRoute: typeof ControlledLearningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -197,11 +276,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/data-quality': {
+      id: '/data-quality'
+      path: '/data-quality'
+      fullPath: '/data-quality'
+      preLoaderRoute: typeof DataQualityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fraud-radar': {
       id: '/fraud-radar'
       path: '/fraud-radar'
       fullPath: '/fraud-radar'
       preLoaderRoute: typeof FraudRadarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/model-registry': {
+      id: '/model-registry'
+      path: '/model-registry'
+      fullPath: '/model-registry'
+      preLoaderRoute: typeof ModelRegistryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/returns': {
@@ -216,6 +309,13 @@ declare module '@tanstack/react-router' {
       path: '/review-queue'
       fullPath: '/review-queue'
       preLoaderRoute: typeof ReviewQueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case/$caseId': {
@@ -240,10 +340,15 @@ const rootRouteChildren: RootRouteChildren = {
   AnalyticsRoute: AnalyticsRoute,
   AnalyzeReturnRoute: AnalyzeReturnRoute,
   AssignedRoute: AssignedRoute,
+  AuditLogRoute: AuditLogRoute,
+  ControlledLearningRoute: ControlledLearningRoute,
   DashboardRoute: DashboardRoute,
+  DataQualityRoute: DataQualityRoute,
   FraudRadarRoute: FraudRadarRoute,
+  ModelRegistryRoute: ModelRegistryRoute,
   ReturnsRoute: ReturnsRoute,
   ReviewQueueRoute: ReviewQueueRoute,
+  SettingsRoute: SettingsRoute,
   CaseCaseIdRoute: CaseCaseIdRoute,
   GovernanceRetrainingRoute: GovernanceRetrainingRoute,
 }
