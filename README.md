@@ -1,26 +1,62 @@
-# Deploy Smarter
+# TrustLoop 🔄
 
-analyze the file and delpoy it
+### AI-Powered E-Commerce Returns Intelligence & Fraud Decisioning
 
-This project was built with [Lovable](https://lovable.dev).
+TrustLoop is an AI-powered returns intelligence platform that analyzes e-commerce return requests using **machine learning, visual evidence, policy intelligence, and multi-agent investigation** to determine whether a return should be accepted, rejected, or escalated for human review.
 
-**Live app**: https://file-friendly-deployer.lovable.app
+---
 
-## Build with Lovable
+## 🚀 What TrustLoop Does
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ab0d7a43-6620-4600-94d5-710111ad9ce7).
+TrustLoop evaluates a return case from multiple dimensions:
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- 🤖 **ML Risk Scoring** — Detects suspicious return behavior using LightGBM.
+- 👁️ **Visual Evidence Analysis** — Analyzes product/return images using Gemini Vision.
+- 📚 **Policy Intelligence** — Retrieves and evaluates relevant return policies using RAG.
+- 🧠 **Multi-Agent Investigation** — Multiple specialized agents investigate different aspects of a case.
+- ⚖️ **Decision Fusion** — Combines ML, evidence, policy, and investigation signals.
+- 🔍 **Explainable Decisions** — Provides risk factors, evidence, and reasoning behind decisions.
+- 👨‍💼 **Human Escalation** — Sends uncertain or high-risk cases for manual review.
+- 📈 **Feedback & Learning** — Captures human feedback for model and decision-system improvement.
+- 🕸️ **Evidence Visualization** — Visualizes relationships between cases, evidence, signals, and decisions.
 
-## Development
+---
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## 🏗️ Architecture
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+```text
+                    ┌─────────────────────┐
+                    │   Return Request    │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Intake Agent      │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+       ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+       │ Vision /    │ │ Risk Agent  │ │ Policy RAG  │
+       │ Evidence    │ │             │ │             │
+       └──────┬──────┘ └──────┬──────┘ └──────┬──────┘
+              │               │               │
+              └───────────────┼───────────────┘
+                              ▼
+                    ┌─────────────────────┐
+                    │ Investigation Agent │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Score Fusion      │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                 ┌───────────────────────────┐
+                 │     Decision Engine       │
+                 └─────────────┬─────────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+        AUTO_ACCEPT       AUTO_RETURN    HUMAN_ESCALATION
