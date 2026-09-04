@@ -29,12 +29,12 @@ export const evidenceTone: Record<EvidenceState, Tone> = {
 };
 
 export const money = (n: number) =>
-  n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  n.toLocaleString("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
 
 export const pct = (n: number, digits = 1) => `${(n * 100).toFixed(digits)}%`;
 
 export const shortDate = (iso: string) =>
-  new Date(iso).toLocaleString("en-US", {
+  new Date(iso).toLocaleString("en-IN", {
     month: "short",
     day: "numeric",
     hour: "2-digit",

@@ -101,11 +101,11 @@ function driversFor(c: {
     tag: `${(c.visionConfidence * 100).toFixed(1)}% CONF`,
     tone: c.visionConfidence >= 0.85 ? "positive" : "negative",
   });
-  if (c.value >= 500) {
+  if (c.value >= 42000) {
     out.push({
       icon: "payments",
       title: "Item value exceeds autonomous refund threshold",
-      detail: `x under Policy Rule PR-GOV-901.`,
+      detail: `Order value is ₹${c.value.toLocaleString("en-IN")}. Autonomous refunds are hard-capped at ₹42,000 under Policy Rule PR-GOV-901.`,
       tag: "HARD GATE",
       tone: "negative",
     });
@@ -124,12 +124,12 @@ function driversFor(c: {
   out.push({
     icon: "sell",
     title:
-      c.lifetimeValue >= 2000
-        ? `Customer lifetime spend ($${c.lifetimeValue.toLocaleString()}) suppresses fraud propensity`
-        : `Thin transactional history (LTV $${c.lifetimeValue.toLocaleString()}) offers no trust prior`,
+      c.lifetimeValue >= 170000
+        ? `Customer lifetime spend (₹${c.lifetimeValue.toLocaleString("en-IN")}) suppresses fraud propensity`
+        : `Thin transactional history (LTV ₹${c.lifetimeValue.toLocaleString("en-IN")}) offers no trust prior`,
     detail: `Historical return rate ${(c.returnRate * 100).toFixed(1)}% across the account lifetime.`,
-    tag: c.lifetimeValue >= 2000 ? "TOP 5% VIP" : "LOW PRIOR",
-    tone: c.lifetimeValue >= 2000 ? "positive" : "neutral",
+    tag: c.lifetimeValue >= 170000 ? "TOP 5% VIP" : "LOW PRIOR",
+    tone: c.lifetimeValue >= 170000 ? "positive" : "neutral",
   });
   if (c.clusterId) {
     out.push({
@@ -1003,9 +1003,9 @@ export const DEFAULT_THRESHOLDS: Threshold[] = [
     description:
       "Returns above this order value always route to human verification.",
     value: 42000,
-    min: 100,
-    max: 2500,
-    step: 50,
+    min: 10000,
+    max: 200000,
+    step: 1000,
     unit: "₹",
   },
   {
@@ -1032,7 +1032,7 @@ export const DEFAULT_THRESHOLDS: Threshold[] = [
     key: "returnWindowDays",
     label: "Policy return window",
     description: "Section 4.2 eligibility window measured from delivery.",
-    value: 2500,
+    value: 30,
     min: 7,
     max: 90,
     step: 1,
@@ -1062,7 +1062,7 @@ export interface GroundTruthRecord {
 
 export const DEMO_GROUND_TRUTH: GroundTruthRecord[] = [
   {
-    caseId: "RET-8941-NYC",
+    caseId: "RET-8941-BLR",
     prediction: "Legitimate (68% conf)",
     truth: "Policy Abuser (Serial Wardrobing)",
     officer: "Sarah Lin (Lead T&S)",
@@ -1070,7 +1070,7 @@ export const DEMO_GROUND_TRUTH: GroundTruthRecord[] = [
     at: "Today, 09:14:22",
   },
   {
-    caseId: "RET-8938-LON",
+    caseId: "RET-8938-DEL",
     prediction: "Organized Fraud (84% conf)",
     truth: "Legitimate (Carrier Damaged In-Transit)",
     officer: "David K. (Senior Analyst)",
@@ -1078,7 +1078,7 @@ export const DEMO_GROUND_TRUTH: GroundTruthRecord[] = [
     at: "Today, 08:42:01",
   },
   {
-    caseId: "RET-8924-SFO",
+    caseId: "RET-8924-MUM",
     prediction: "Policy Abuser (52% conf)",
     truth: "Organized Fraud (Mailing Brick Box)",
     officer: "Sarah Lin (Lead T&S)",
