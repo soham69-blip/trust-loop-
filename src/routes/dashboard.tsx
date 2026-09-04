@@ -1,193 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "TrustLoop | Every return has a story" },
-      { name: "description", content: "AI risk analysis, policy checks, computer vision and human verification turn uncertain returns into explainable decisions." },
-      { property: "og:title", content: "TrustLoop | Every return has a story" },
-      { property: "og:description", content: "AI risk analysis, policy checks, computer vision and human verification turn uncertain returns into explainable decisions." },
+      { title: "TrustLoop Overview Dashboard" },
+      { name: "description", content: "Monitor enterprise return decisions, adjudication workload, predictive risk signals and autonomous model health." },
+      { property: "og:title", content: "TrustLoop Overview Dashboard" },
+      { property: "og:description", content: "Monitor enterprise return decisions, adjudication workload, predictive risk signals and autonomous model health." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: PageIndex,
+  component: PageDashboard,
 });
 
-function PageIndex() {
+function PageDashboard() {
   return (
     <AppShell>
 <main className="relative pt-14 w-full px-grid-margin py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full space-y-6 pb-12">
-
-<section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0c1424] via-primary-container to-[#101b33] border border-outline-variant/25 text-on-primary p-6 md:p-8 shadow-lg">
-
-<div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)", backgroundSize: "28px 28px" }}></div>
-<div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDuration: "8s" }}></div>
-<div className="absolute -bottom-20 -left-20 w-80 h-80 bg-on-tertiary-container/15 rounded-full blur-3xl pointer-events-none"></div>
-<div className="relative z-10 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-8">
-
-<div className="max-w-2xl space-y-4">
-
-<div className="flex flex-wrap items-center gap-2.5">
-<span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/30 border border-secondary-fixed/30 text-secondary-fixed font-label-code-sm text-label-code-sm tracking-wider font-semibold">
-<span className="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
-          LIVE EVIDENCE ENGINE V2.4
-        </span>
-<span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/10 border border-white/10 text-on-primary-container font-label-code-sm text-[11px] tracking-wide">
-<span className="material-symbols-outlined text-[14px] text-tertiary-fixed">verified</span>
-          AI ASSISTS • EVIDENCE EXPLAINS • HUMANS VERIFY • TRUSTLOOP LEARNS SAFELY
-        </span>
-</div>
-
-<div className="space-y-2">
-<h1 className="font-headline-xl text-headline-xl md:text-[34px] leading-tight text-on-primary tracking-tight font-bold">
-          Every return has a story. <span className="text-transparent bg-clip-text bg-gradient-to-r from-tertiary-fixed via-secondary-fixed to-primary-fixed">TrustLoop finds the evidence.</span>
-</h1>
-<p className="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl leading-relaxed">
-          TrustLoop combines AI risk analysis, return policy, visual inspection, and human verification to turn uncertain returns into explainable business decisions.
-        </p>
-</div>
-
-<div className="pt-2 flex flex-wrap items-center gap-3">
-<a className="inline-flex items-center gap-2 bg-on-primary text-on-surface hover:bg-surface-container-high px-4 py-2.5 rounded-lg font-label-code text-label-code font-bold transition-all shadow-md group" href="#operational-table">
-<span>Explore Investigation Engine</span>
-<span className="material-symbols-outlined text-[17px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-<button className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 text-on-primary px-4 py-2.5 rounded-lg font-label-code text-label-code font-medium backdrop-blur-sm transition-all" id="hero-demo-btn" type="button">
-<span className="material-symbols-outlined text-[18px] text-tertiary-fixed">play_circle</span>
-<span>Play Interactive Demo</span>
-<span className="font-label-code-sm text-[10px] uppercase px-1.5 py-0.5 rounded bg-secondary-fixed/20 text-secondary-fixed ml-0.5 font-semibold">Scenario #89241</span>
-</button>
-
-<button className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-highest/10 hover:bg-surface-container-highest/20 border border-white/10 font-label-code-sm text-label-code-sm text-primary-fixed transition-colors" id="toggle-evidence-sim" type="button">
-<span className="material-symbols-outlined text-[15px] text-tertiary-fixed">sync_alt</span>
-<span id="sim-status-label">Simulate: Aligned Case</span>
-</button>
-</div>
-</div>
-
-<div className="w-full xl:w-auto xl:min-w-[560px] 2xl:min-w-[640px] flex-1 bg-surface-container-lowest/[0.04] border border-white/15 rounded-xl p-4 md:p-5 backdrop-blur-sm relative shadow-inner">
-<div className="flex items-center justify-between pb-3 border-b border-white/10">
-<div className="flex items-center gap-2">
-<span className="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
-<span className="font-label-code-sm text-label-code-sm uppercase tracking-widest text-primary-fixed-dim font-bold">Multi-Stream Evidence Fusion Graph</span>
-</div>
-<div className="flex items-center gap-2">
-<span className="font-label-code-sm text-[11px] px-2 py-0.5 rounded bg-tertiary-fixed/15 text-tertiary-fixed border border-tertiary-fixed/30 font-semibold" id="stream-telemetry-badge">TELEMETRY: SYNCHRONIZED</span>
-</div>
-</div>
-
-<div className="relative py-4 grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
-
-<svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
-<path className="animate-flow-line opacity-75" d="M 175 42 C 230 42, 230 115, 280 115" fill="none" stroke="#68dba9" strokeWidth="1.75" />
-<path className="animate-flow-line opacity-75" d="M 175 92 C 220 92, 230 115, 280 115" fill="none" stroke="#85f8c4" strokeWidth="1.75" />
-<path className="animate-flow-line opacity-75" d="M 175 142 C 220 142, 230 115, 280 115" fill="none" stroke="#c3c0ff" strokeWidth="1.75" />
-<path className="animate-flow-line opacity-75" d="M 175 192 C 230 192, 230 115, 280 115" fill="none" stroke="#645efb" strokeWidth="1.75" />
-<path className="animate-flow-line opacity-90" d="M 395 115 L 435 115" fill="none" stroke="#85f8c4" strokeWidth="2.5" />
-</svg>
-
-<div className="md:col-span-5 space-y-2 relative z-10">
-
-<div className="p-2.5 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 border border-white/10 transition-all hover:translate-x-1 cursor-default group">
-<div className="flex items-center justify-between">
-<div className="flex items-center gap-2">
-<span className="material-symbols-outlined text-[16px] text-tertiary-fixed">chat_bubble_outline</span>
-<span className="font-label-code-sm text-label-code-sm font-semibold text-on-primary">Customer Story & Claim</span>
-</div>
-<span className="font-label-code-sm text-[10px] px-1.5 py-0.5 rounded bg-tertiary-fixed/20 text-tertiary-fixed font-bold">NLP 96%</span>
-</div>
-<p className="font-body-sm text-[11px] text-primary-fixed-dim truncate mt-0.5" id="hero-claim-text">Claim: "Zipper seam torn under light standard wear"</p>
-</div>
-
-<div className="p-2.5 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 border border-white/10 transition-all hover:translate-x-1 cursor-default group">
-<div className="flex items-center justify-between">
-<div className="flex items-center gap-2">
-<span className="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">gavel</span>
-<span className="font-label-code-sm text-label-code-sm font-semibold text-on-primary">Return Policy Engine</span>
-</div>
-<span className="font-label-code-sm text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-primary-fixed font-bold">Sec 4.2 Compliant</span>
-</div>
-<p className="font-body-sm text-[11px] text-primary-fixed-dim truncate mt-0.5">Eligibility window: Day 14 of 30 • Valid proof</p>
-</div>
-
-<div className="p-2.5 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 border border-secondary-fixed-dim/30 transition-all hover:translate-x-1 cursor-default group">
-<div className="flex items-center justify-between">
-<div className="flex items-center gap-2">
-<span className="material-symbols-outlined text-[16px] text-secondary-fixed">photo_camera</span>
-<span className="font-label-code-sm text-label-code-sm font-semibold text-on-primary">Computer Vision Stream</span>
-</div>
-<span className="font-label-code-sm text-[10px] px-1.5 py-0.5 rounded bg-secondary-fixed/20 text-secondary-fixed font-bold" id="hero-cv-badge">94.1% Defect</span>
-</div>
-<p className="font-body-sm text-[11px] text-primary-fixed-dim truncate mt-0.5" id="hero-cv-desc">Micro-abrasion + stitch stress verified</p>
-</div>
-
-<div className="p-2.5 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 border border-white/10 transition-all hover:translate-x-1 cursor-default group">
-<div className="flex items-center justify-between">
-<div className="flex items-center gap-2">
-<span className="material-symbols-outlined text-[16px] text-secondary">manage_accounts</span>
-<span className="font-label-code-sm text-label-code-sm font-semibold text-on-primary">Behavioral ML Vector</span>
-</div>
-<span className="font-label-code-sm text-[10px] px-1.5 py-0.5 rounded bg-tertiary-fixed/20 text-tertiary-fixed font-bold" id="hero-behavior-badge">0.18 Low Risk</span>
-</div>
-<p className="font-body-sm text-[11px] text-primary-fixed-dim truncate mt-0.5">Tier 2 Loyalty • Historical return frequency 6.8%</p>
-</div>
-</div>
-
-<div className="md:col-span-3 flex flex-col items-center justify-center relative z-10 px-1 py-3">
-<div className="w-full p-3.5 rounded-xl bg-gradient-to-b from-[#1b2540] to-[#0f172a] border border-secondary-fixed/40 text-center shadow-lg relative glow-indigo hover:border-secondary-fixed transition-colors">
-<div className="w-10 h-10 mx-auto rounded-lg bg-secondary-container flex items-center justify-center text-on-primary shadow-sm mb-2">
-<span className="material-symbols-outlined text-[22px] animate-spin" style={{ animationDuration: "12s" }}>hub</span>
-</div>
-<div className="font-label-code-sm text-[11px] font-bold tracking-wider text-secondary-fixed uppercase">Evidence Fusion Core</div>
-<div className="text-[10px] font-body-sm text-primary-fixed-dim mt-0.5">Realtime Cross-Modal Alignment</div>
-<div className="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-center gap-1.5">
-<span className="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
-<span className="font-label-code-sm text-[10px] text-on-primary font-semibold" id="fusion-state-text">Signals Aligned</span>
-</div>
-</div>
-</div>
-
-<div className="md:col-span-4 relative z-10">
-<div className="p-3.5 rounded-xl bg-[#131d33] border-2 border-secondary-fixed/60 shadow-xl space-y-2.5 transition-all" id="hero-resolution-card">
-<div className="flex items-center justify-between">
-<span className="font-label-code-sm text-[10px] uppercase tracking-widest text-primary-fixed-dim font-bold">TRUSTLOOP RESOLUTION</span>
-<span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary-fixed text-[10px] font-label-code-sm font-bold border border-secondary-fixed/40" id="hero-gate-indicator">
-<span className="material-symbols-outlined text-[12px]">gavel</span> MANDATE
-              </span>
-</div>
-<div className="space-y-1">
-<div className="flex items-center gap-2">
-<span className="material-symbols-outlined text-[20px] text-secondary-fixed" id="hero-resolution-icon">policy</span>
-<span className="font-headline-sm text-headline-sm text-on-primary font-bold" id="hero-resolution-title">Human Investigation</span>
-</div>
-<p className="font-body-sm text-[11px] text-primary-fixed-dim leading-snug" id="hero-resolution-desc">
-                Item value ($799.00) exceeds $500 auto-clear threshold for outerwear defect claims despite high visual signal agreement.
-              </p>
-</div>
-<div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-label-code-sm">
-<span className="text-outline-variant">Adjudication Route:</span>
-<span className="text-secondary-fixed font-bold" id="hero-resolution-route">Sarah Lin (Lead Reviewer)</span>
-</div>
-</div>
-</div>
-</div>
-
-<div className="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between text-primary-fixed-dim font-label-code-sm text-[11px] gap-2">
-<div className="flex items-center gap-2">
-<span className="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
-<span>Inference Latency: <strong>38ms</strong></span>
-<span className="text-white/20">•</span>
-<span>Policy Rules Checked: <strong>34 Active</strong></span>
-</div>
-<div className="flex items-center gap-3">
-<span className="text-on-primary-container">Case Context: <strong className="text-on-primary">#CASE-89241 (Arc'teryx Alpha SV)</strong></span>
-</div>
-</div>
-</div>
-</div>
-</section>
 
 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-container-lowest p-5 rounded-xl shadow-sm">
 <div className="space-y-1">
@@ -545,7 +376,7 @@ function PageIndex() {
 </div>
 </div>
 
-<div className="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col" id="operational-table">
+<div className="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
 
 <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface-container-low/40">
 <div className="flex items-center gap-3">
