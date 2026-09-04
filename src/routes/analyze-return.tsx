@@ -112,7 +112,7 @@ const EMPTY: AnalyzeInput = {
   photosAttached: true,
   tagsIntact: true,
   originalPackaging: true,
-  region: "US-West",
+  region: "IN-West (Mumbai)",
   tier: "Tier 2 Loyalty",
   knownRing: false,
 };
@@ -224,7 +224,7 @@ function AnalyzeReturnPage() {
                     placeholder="Optional"
                   />
                 </Field>
-                <Field label="Order value (USD)">
+                <Field label="Order value (INR ₹)">
                   <input
                     type="number"
                     min={1}
@@ -251,7 +251,7 @@ function AnalyzeReturnPage() {
                     value={form.region}
                     onChange={(e) => set("region", e.target.value)}
                   >
-                    {["US-West", "US-East", "US-Central", "EU-North", "EU-Central", "UK", "APAC", "LATAM", "MEA"].map(
+                    {["IN-West (Mumbai)", "IN-West (Pune)", "IN-North (Delhi NCR)", "IN-North (Jaipur)", "IN-South (Bengaluru)", "IN-South (Chennai)", "IN-East (Kolkata)", "IN-Central (Indore)"].map(
                       (r) => (
                         <option key={r}>{r}</option>
                       ),
