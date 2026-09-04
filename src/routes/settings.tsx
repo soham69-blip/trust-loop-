@@ -30,7 +30,7 @@ export const Route = createFileRoute("/settings")({
 });
 
 function format(value: number, unit: string) {
-  if (unit === "$") return money(value);
+  if (unit === "₹") return money(value);
   if (unit === "days") return `${value} days`;
   return value.toFixed(2);
 }

@@ -52,7 +52,7 @@ function PageFraudRadar() {
 </div>
 <div>
 <div className="flex items-baseline gap-1">
-<span className="font-metric-display text-metric-display text-on-surface font-bold tracking-tight">$148,250</span>
+<span className="font-metric-display text-metric-display text-on-surface font-bold tracking-tight">₹1,24,53,000</span>
 <span className="font-label-code-sm text-label-code-sm text-on-tertiary-container font-semibold">+18.4%</span>
 </div>
 <div className="flex items-center gap-1 mt-1">
@@ -207,7 +207,7 @@ function PageFraudRadar() {
 <span className="font-label-code-sm text-label-code-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">High Risk</span>
 <span className="material-symbols-outlined text-[16px] text-error">perm_identity</span>
 </div>
-<span className="font-headline-sm text-headline-sm font-bold text-on-surface">Jessica M.</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">Sneha M.</span>
 <span className="font-label-code-sm text-label-code-sm text-on-surface-variant truncate">ID: #USR-90214</span>
 <div className="mt-1 pt-1 bg-surface-container-low rounded p-1.5 flex flex-col gap-0.5">
 <span className="font-label-code-sm text-label-code-sm font-semibold text-secondary flex items-center gap-1">
@@ -224,7 +224,7 @@ function PageFraudRadar() {
 <span className="font-label-code-sm text-label-code-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">High Risk</span>
 <span className="material-symbols-outlined text-[16px] text-error">person_alert</span>
 </div>
-<span className="font-headline-sm text-headline-sm font-bold text-on-surface">Jess Miller</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">Sneha Malhotra</span>
 <span className="font-label-code-sm text-label-code-sm text-on-surface-variant truncate">ID: #USR-90482</span>
 <div className="mt-1 pt-1 bg-surface-container-low rounded p-1.5 flex flex-col gap-0.5">
 <span className="font-label-code-sm text-label-code-sm font-semibold text-secondary flex items-center gap-1">
@@ -276,7 +276,7 @@ function PageFraudRadar() {
 <span className="material-symbols-outlined text-[16px] text-outline">shopping_bag</span>
 </div>
 <span className="font-headline-sm text-headline-sm font-bold text-on-surface">Luxury Handbags</span>
-<span className="font-label-code-sm text-label-code-sm text-on-surface font-semibold">$1,200 – $2,400 Range</span>
+<span className="font-label-code-sm text-label-code-sm text-on-surface font-semibold">₹1,00,000 – ₹2,00,000 Range</span>
 <div className="text-body-sm font-body-sm text-on-surface-variant">
                 5 total returns attempted across cluster in past 96 hours.
               </div>
@@ -354,7 +354,7 @@ function PageFraudRadar() {
                 </span>
 <span className="font-label-code-sm text-label-code-sm text-error font-bold">100% Vector</span>
 </div>
-<p className="font-label-code-sm text-label-code-sm text-on-surface-variant font-medium">iPhone 15 Pro, iOS 17.4, Canvas ID 0x8F9A — Observed across Jessica M. & Jess Miller login sessions.</p>
+<p className="font-label-code-sm text-label-code-sm text-on-surface-variant font-medium">iPhone 15 Pro, iOS 17.4, Canvas ID 0x8F9A — Observed across Sneha M. & Sneha Malhotra login sessions.</p>
 </div>
 <div className="p-2.5 rounded-lg bg-surface-container flex flex-col gap-1 shadow-sm">
 <div className="flex items-center justify-between">
@@ -388,7 +388,7 @@ function PageFraudRadar() {
 <div className="bg-surface-container-high rounded-xl p-3 flex items-center justify-between">
 <div className="flex flex-col">
 <span className="font-label-code-sm text-label-code-sm text-outline uppercase font-semibold">Direct Cluster At-Risk</span>
-<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$8,450.00</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">₹7,09,800</span>
 </div>
 <div className="flex flex-col text-right">
 <span className="font-label-code-sm text-label-code-sm text-outline uppercase font-semibold">Status</span>
@@ -407,7 +407,7 @@ function PageFraudRadar() {
 <div className="mt-2 flex items-center justify-between pt-2">
 <div className="flex items-center gap-1.5">
 <div className="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-code-sm text-label-code-sm font-bold">SL</div>
-<span className="font-body-sm text-body-sm text-on-surface font-medium">Assigned: Sarah Lin</span>
+<span className="font-body-sm text-body-sm text-on-surface font-medium">Assigned: Ananya Sharma</span>
 </div>
 <span className="font-label-code-sm text-label-code-sm text-secondary font-semibold">Case #TR-8819</span>
 </div>
@@ -439,7 +439,7 @@ function PageFraudRadar() {
 <div className="mt-2 bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
 <div className="flex items-center justify-between font-label-code-sm text-label-code-sm">
 <span className="text-outline">Impact Value:</span>
-<span className="font-bold text-on-surface">$2,450.00</span>
+<span className="font-bold text-on-surface">₹2,05,800</span>
 </div>
 <div className="flex items-center justify-between font-label-code-sm text-label-code-sm">
 <span className="text-outline">Hardware Hash:</span>
@@ -468,7 +468,7 @@ function PageFraudRadar() {
 <div className="mt-2 bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
 <div className="flex items-center justify-between font-label-code-sm text-label-code-sm">
 <span className="text-outline">Impact Value:</span>
-<span className="font-bold text-on-surface">$5,120.00</span>
+<span className="font-bold text-on-surface">₹4,30,100</span>
 </div>
 <div className="flex items-center justify-between font-label-code-sm text-label-code-sm">
 <span className="text-outline">Pattern Cycle:</span>
@@ -497,7 +497,7 @@ function PageFraudRadar() {
 <div className="mt-2 bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
 <div className="flex items-center justify-between font-label-code-sm text-label-code-sm">
 <span className="text-outline">Impact Value:</span>
-<span className="font-bold text-on-surface">$3,890.00</span>
+<span className="font-bold text-on-surface">₹3,26,800</span>
 </div>
 <div className="flex items-center justify-between font-label-code-sm text-label-code-sm">
 <span className="text-outline">Visual Hash Distance:</span>
