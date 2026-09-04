@@ -6,7 +6,7 @@ import { AppShell } from "@/components/AppShell";
 import { Bar, Btn, EmptyState, PageHead, Panel, Pill, Stat, inputClass } from "@/components/tl";
 import { downloadCSV } from "@/lib/export";
 import { DECISION_LABEL, RISK_CLASS_LABEL } from "@/lib/demo-data";
-import { useMetrics, useTrustLoop } from "@/lib/trustloop-store";
+import { useTrustLoop } from "@/lib/trustloop-store";
 import { decisionTone, money, pct, priorityTone, riskTone, shortDate } from "@/lib/ui-maps";
 
 export const Route = createFileRoute("/dashboard")({
@@ -34,7 +34,6 @@ type Range = "7d" | "30d" | "all";
 
 function DashboardPage() {
   const { cases, clusters, models, audit, claimCase } = useTrustLoop();
-  const metrics = useMetrics();
   const navigate = useNavigate();
   const [range, setRange] = useState<Range>("all");
   const [region, setRegion] = useState("all");
